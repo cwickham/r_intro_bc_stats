@@ -1,0 +1,93 @@
+---
+title: "Data Basics"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+library(haven)
+library(readxl)
+```
+
+# Tabular Data
+
+You might not see much difference between these two in this notebook, but one is a tibble and one is a data frame:
+```{r}
+mpg
+```
+
+```{r}
+quakes
+```
+
+## Your turn 1
+
+Take a look at these two datasets, by typing their names into the console:
+* quakes
+* mpg
+
+## Your turn 2
+
+Try running each line one by one, with Cmd/Ctrl + r:
+
+```{r}
+dim(x = mpg)     
+names(x = mpg)   
+glimpse(x = mpg) 
+View(x = mpg)  
+```
+
+## Your turn 3
+
+How many rows of data are in quakes?
+
+```{r}
+
+```
+
+What are the names of the variables in quakes?
+
+```{r}
+
+```
+
+## Your turn 4
+
+Run the chunk to get help on `mpg`. What is this data?
+```{r}
+?mpg
+```
+
+# Vector Data
+
+## Your turn 5
+
+Take another look at mpg.  What kind of data is in each column?
+
+```{r}
+mpg
+```
+
+# Importing Data
+
+## Your Turn 6
+
+Take a look in the data/ directory in the project folder.
+
+Try reading in each file with the appropriate function.
+
+```{r}
+
+```
+
+
+## Your Turn 7
+
+Can you see what is wrong with the Excel file when it is imported?
+
+Scan the Arguments section of ?read_excel, can you find an argument that might help? Try it!
+
+```{r}
+?read_excel
+```
+

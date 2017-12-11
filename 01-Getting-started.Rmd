@@ -1,0 +1,68 @@
+---
+title: "Getting Started with R and RStudio"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+```
+
+## R Notebooks
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+R code goes in **code chunks**, denoted by three backticks. Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd/Crtl+Shift+Enter*. 
+
+```{r}
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+Add a new code chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd/Ctrl+Option+I*.
+
+```{r}
+2 + 2
+```
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+## Assigning variables
+
+What's the difference between the code in this chunk:
+```{r}
+filter(mtcars, cyl == 4)
+```
+
+And the code in this chunk?
+```{r}
+four_cyls <- filter(mtcars, cyl == 4)
+```
+
+## Function syntax
+
+Take a look at this code: 
+
+```{r}
+heights <- pull(.data = starwars, var = height)
+mean(heights, na.rm = TRUE)
+```
+
+1. What functions are being called?
+2. What arguments do they take?
+3. What values are being passed as which arguments?
+
+## Syntax gone wrong
+
+```{r, error=TRUE}
+sd(pull(.data = starwars, var = weight) 
+```
+
+```{r, error=TRUE}
+my_name <- "Charlotte'
+```
+
+```{r, error=TRUE}
+pull(.data = "starwars", var = height)
+```

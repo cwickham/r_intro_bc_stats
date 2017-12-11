@@ -1,0 +1,169 @@
+---
+title: "Transform Data"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+library(gapminder)
+
+# Toy dataset to use
+pollution <- tribble(
+       ~city,   ~size, ~amount, 
+  "New York", "large",      23,
+  "New York", "small",      14,
+    "London", "large",      22,
+    "London", "small",      16,
+   "Beijing", "large",      121,
+   "Beijing", "small",      56
+)
+```
+
+## gapminder
+
+```{r}
+gapminder
+```
+
+## Your Turn 1
+
+* `filter()` selects rows
+* logical tests
+
+See if you can use the logical operators to manipulate our code below to show:
+
+The data for Canada
+```{r}
+filter(gapminder, country == "New Zealand")
+```
+
+All data for countries in Oceania
+```{r}
+filter(gapminder, country == "New Zealand")
+```
+
+Rows where the life expectancy is greater than 82
+```{r}
+filter(gapminder, country == "New Zealand")
+```
+
+
+## Your Turn 2
+
+Use Boolean operators to alter the code below to return only the rows that contain:
+
+* Canada before 1970
+```{r}
+filter(gapminder, country == "Canada", year < 1970)
+```
+
+*  Countries where life expectancy in 2007 is below 50
+
+```{r}
+filter(gapminder, year == 2007, lifeExp < 50)
+```
+
+* Countries where life expectancy in 2007 is below 50, and are not in Africa.
+
+```{r}
+filter(gapminder, year == 2007, lifeExp < 50, !(continent == "Africa"))
+```
+
+## Your Turn 3
+
+Alter the code to:
+
+* Add an africa column, which contains TRUE is the country is on the Africa continent.
+* Add a rank_pop column to rank each row in gapminder from largest pop to smallest pop.
+
+
+```{r}
+mutate(gapminder, 
+  africa = continent == "Africa",
+  rank_pop = min_rank(desc(pop)))
+```
+
+## Your Turn 4
+
+Use summarise() to compute three statistics about the data:
+
+* The first (minimum) year in the dataset
+* The last (maximum) year in the dataset
+* The number of countries represented in the data (Hint: use cheatsheet)
+
+```{r}
+gapminder %>% 
+  summarise(first = min(year), 
+            last = max(year),
+            n_countries = n_distinct(country))
+```
+
+## Your Turn 5
+
+Extract the rows where continent == "Africa" and year == 2007. 
+
+Then use summarise() and summary functions to find:
+
+1. The number of unique countries
+2. The median life expectancy
+
+```{r}
+gapminder %>% 
+  filter(continent == "Africa", year == 2007) %>% 
+  summarise(n_countries = n_distinct(country),
+    med_life_exp = median(lifeExp))
+```
+
+
+```{r}
+gapminder %>% 
+  group_by(continent)
+```
+## Your Turn 6
+
+Find the median life expectancy by continent
+
+```{r}
+gapminder %>%
+  group_by(continent) %>% 
+  summarise(med_life_exp = median(lifeExp)) 
+```
+
+## Your Turn 7
+
+Brainstorm with your neighbor the sequence of operations to find:  the country with biggest jump in life expectancy  (between any two consecutive records) for each continent.
+
+1. Find jumps between time points for all countries:
+
+    i) Group by country
+    ii) Add jump variable
+2. Rank jump within continent
+
+    i) Group by continent
+    ii) Add rank of jump variable
+3. Filter out countries with rank 1
+
+## Your Turn 8
+
+Find the country with biggest jump in life expectancy (between any two consecutive records) for each continent.
+
+```{r}
+# One of many solutions
+gapminder %>%
+  group_by(country) %>%
+  mutate(jump = lifeExp - lag(lifeExp)) %>%
+  group_by(continent) %>%
+  mutate(rank = min_rank(desc(jump))) %>%
+  filter(rank == 1)
+
+```
+
+***
+
+# Take aways
+
+* Extract cases with `filter()`  
+* Make new variables, with `mutate()`  
+* Make tables of summaries with `summarise()`  
+* Do groupwise operations with `group_by()`
+* Connect operations with `%>%`  
