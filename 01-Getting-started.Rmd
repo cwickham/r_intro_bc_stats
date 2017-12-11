@@ -3,6 +3,8 @@ title: "Getting Started with R and RStudio"
 output: html_notebook
 ---
 
+<!-- This file by Charlotte Wickham is licensed under a Creative Commons Attribution 4.0 International License. -->
+
 ```{r setup}
 library(tidyverse)
 ```
