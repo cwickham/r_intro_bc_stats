@@ -1,0 +1,124 @@
+---
+title: "Iteration and List Columns"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+library(gapminder)
+library(broom)
+
+nz <- gapminder %>%
+  filter(country == "New Zealand")
+canada <- gapminder %>%
+  filter(country == "Canada")
+us <- gapminder %>%
+  filter(country == "United States")
+
+# A complicated object to play with
+three_models <- list(
+  lm(lifeExp ~ year, data = nz),
+  lm(lifeExp ~ year, data = canada),
+  lm(lifeExp ~ year, data = us)
+)
+```
+
+# Iteration
+
+## Your turn 1
+
+Run the setup chunk.
+Look for  three_models in your environment.  Click on it to open a Viewer.
+What kind of object is this?  Does its contents look familiar?
+
+```{r}
+
+```
+
+## Your Turn 2
+
+Do it for one element: add some code to tidy nz_model.
+
+```{r}
+nz_model <- three_models[[1]]
+
+```
+
+## Your turn 3
+
+Run the code, what kind of object is `tidy_models`?
+
+```{r}
+tidy_models <- map(three_models, ~ tidy(.x))
+tidy_models
+```
+
+## Your turn 4
+
+Edit the code to instead get the r.squared for each model.
+
+```{r}
+map_dbl(three_models, ~ tidy(.x) %>% 
+                       filter(term == "year") %>% 
+                       pull(estimate)
+)
+```
+
+# List columns
+
+
+## Your turn 5
+
+Run the chunk: it nests gapminder, then pulls out the data column into data_column.
+Use the object explorer (i.e. the magnifying glass in the Environment pane)mto take a look at `data_column`.  What kind of object is it?
+
+```{r}
+gapminder_nested <- gapminder %>% 
+  group_by(country) %>% 
+  nest()
+
+data_column <- gapminder_nested %>% pull(data) 
+```
+
+Following along in slides:
+```{r}
+# Add the models to a model column by mapping over data
+gapminder_nested <- gapminder_nested %>% 
+  mutate(model = map(data, ~ lm(lifeExp ~ year, data = .x)))
+
+# Create the r-squared column, by mapping over model
+gapminder_nested <- gapminder_nested %>% 
+  mutate(r.squared = map_dbl(model, 
+                        ~ glance(.x) %>% pull(r.squared)))
+```
+
+## Your turn 6
+
+(Make sure you run all the chunks before this one, then)
+Filter `gapminder_nested` to find the countries with r.squared less than 0.5.  
+
+```{r}
+gapminder_nested %>% filter(r.squared < 0.5)
+```
+
+Following along with slides:
+```{r}
+gapminder_nested %>% 
+  filter(r.squared < 0.5) %>%
+  unnest(data) %>%
+  ggplot(aes(x = year, y = lifeExp)) + 
+    geom_line(aes(color = country))
+
+```
+
+## Your Turn 7
+
+Write code to:
+
+* Add a column to `gapminder_nested` with the slope coefficient from the model
+* Filter to find countries with a slope above 0.6 years/year.
+* Plot these countries over time.
+
+```{r}
+gapminder_nested 
+```

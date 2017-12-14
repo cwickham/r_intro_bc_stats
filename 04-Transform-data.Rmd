@@ -56,19 +56,19 @@ Use Boolean operators to alter the code below to return only the rows that conta
 
 * Canada before 1970
 ```{r}
-filter(gapminder, country == "Canada", year < 1970)
+filter(gapminder, country == "New Zealand", year > 2000)
 ```
 
 *  Countries where life expectancy in 2007 is below 50
 
 ```{r}
-filter(gapminder, year == 2007, lifeExp < 50)
+filter(gapminder, country == "New Zealand", year > 2000)
 ```
 
 * Countries where life expectancy in 2007 is below 50, and are not in Africa.
 
 ```{r}
-filter(gapminder, year == 2007, lifeExp < 50, !(continent == "Africa"))
+filter(gapminder, country == "New Zealand", year > 2000)
 ```
 
 ## Your Turn 3
@@ -80,9 +80,7 @@ Alter the code to:
 
 
 ```{r}
-mutate(gapminder, 
-  africa = continent == "Africa",
-  rank_pop = min_rank(desc(pop)))
+mutate(gapminder)
 ```
 
 ## Your Turn 4
@@ -94,10 +92,7 @@ Use summarise() to compute three statistics about the data:
 * The number of countries represented in the data (Hint: use cheatsheet)
 
 ```{r}
-gapminder %>% 
-  summarise(first = min(year), 
-            last = max(year),
-            n_countries = n_distinct(country))
+gapminder 
 ```
 
 ## Your Turn 5
@@ -110,25 +105,19 @@ Then use summarise() and summary functions to find:
 2. The median life expectancy
 
 ```{r}
-gapminder %>% 
-  filter(continent == "Africa", year == 2007) %>% 
-  summarise(n_countries = n_distinct(country),
-    med_life_exp = median(lifeExp))
+gapminder 
 ```
 
 
 ```{r}
-gapminder %>% 
-  group_by(continent)
+gapminder
 ```
 ## Your Turn 6
 
 Find the median life expectancy by continent
 
 ```{r}
-gapminder %>%
-  group_by(continent) %>% 
-  summarise(med_life_exp = median(lifeExp)) 
+gapminder 
 ```
 
 ## Your Turn 7

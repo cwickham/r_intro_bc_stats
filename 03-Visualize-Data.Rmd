@@ -29,7 +29,7 @@ Run the code on the slide to make a graph. Pay strict attention to spelling, cap
 Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.  
 
 ```{r}
-ggplot(mpg) + geom_point(aes(x = displ, y = hwy))
+ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy))
 ```
 
 ## Your Turn 3

@@ -1,0 +1,58 @@
+---
+title: "Modelling & Broom"
+output: html_notebook
+---
+
+```{r setup}
+library(gapminder)
+library(tidyverse)
+library(broom)
+```
+
+## Your turn 1 
+
+Run the code chunk.  
+
+Take another look at life expectancy over time for Canada.  What do you notice? 
+
+```{r}
+canada <- gapminder %>%
+  filter(country == "Canada")
+
+ggplot(canada) +
+  geom_line(mapping = aes(x = year, y = lifeExp))
+```
+
+## Your turn 2
+
+Run the chunk to fit the model.
+What kind of output do you get?
+Explore canada_lm by clicking on it in the environment, what's inside the object?
+
+```{r}
+canada_lm <- lm(lifeExp ~ year, data = canada)
+canada_lm
+```
+
+## Your turn 3
+
+Look at the output of canada_lm %>% glance()
+Use dplyr tools to extract the R-squared for the model.
+
+```{r}
+canada_lm %>% glance() 
+```
+
+
+## Your turn 4
+
+How has life expectancy changed in other countries?
+Make a line plot of lifeExp vs. year grouped by country.  
+Set alpha to 0.2, to see the results better.
+
+```{r}
+ggplot(gapminder)
+
+
+```
+
