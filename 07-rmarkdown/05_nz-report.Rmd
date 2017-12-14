@@ -1,0 +1,48 @@
+---
+title: New Zealand
+output:
+  html_document: 
+    toc: true
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+country_name <- "New Zealand"
+```
+
+This report examines a subset of the `gapminder` data set.  In particular the data for `r country_name`.
+
+The report will examine:
+
+* life expectancy over time, and 
+* the most recent value for life expectancy.
+
+```{r, filter-data}
+library(tidyverse)
+library(gapminder)
+
+country_data <- filter(gapminder, country == country_name)
+last_record <- country_data %>%
+  arrange(desc(year)) %>%
+  slice(1)
+```
+
+## Life Expectancy
+
+`r country_name` had a life expectancy of `r round(last_record %>% pull(lifeExp), 1)` in `r last_record %>% pull(year)`.
+
+```{r, plot-lifeExp}
+ggplot(country_data) + 
+  geom_line(aes(x = year, y = lifeExp)) +
+  labs(title = paste("Life expectancy in", country_name),
+    x = "Year",
+    y = "Life Expectancy") +
+  theme_bw()
+```
+
+## Data
+
+```{r}
+country_data
+```

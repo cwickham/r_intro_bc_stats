@@ -1,0 +1,22 @@
+---
+title: New Zealand
+output: html_document
+---
+
+```{r setup, include=FALSE}
+country_name <- "New Zealand"
+```
+
+
+```{r}
+library(tidyverse)
+library(gapminder)
+```
+
+```{r}
+country_data <- filter(gapminder, country == country_name)
+```
+
+```{r}
+country_data
+```

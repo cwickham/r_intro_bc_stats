@@ -1,0 +1,31 @@
+---
+title: New Zealand
+output: html_document
+---
+
+```{r setup, include=FALSE}
+country_name <- "New Zealand"
+```
+
+```{r load-packages, message = FALSE}
+library(tidyverse)
+library(gapminder)
+```
+
+This report examines a subset of the `gapminder` data set.  In particular the data for `r country_name`.
+
+The report will examine:
+
+* life expectancy over time, and 
+* the most recent value for life expectancy.
+
+```{r filter-data}
+country_data <- filter(gapminder, 
+  country == country_name)
+```
+
+## Data
+
+```{r display-data, echo = FALSE}
+country_data
+```
