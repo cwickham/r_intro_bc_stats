@@ -124,28 +124,12 @@ gapminder
 
 Brainstorm with your neighbor the sequence of operations to find:  the country with biggest jump in life expectancy  (between any two consecutive records) for each continent.
 
-1. Find jumps between time points for all countries:
-
-    i) Group by country
-    ii) Add jump variable
-2. Rank jump within continent
-
-    i) Group by continent
-    ii) Add rank of jump variable
-3. Filter out countries with rank 1
-
 ## Your Turn 8
 
 Find the country with biggest jump in life expectancy (between any two consecutive records) for each continent.
 
 ```{r}
-# One of many solutions
-gapminder %>%
-  group_by(country) %>%
-  mutate(jump = lifeExp - lag(lifeExp)) %>%
-  group_by(continent) %>%
-  mutate(rank = min_rank(desc(jump))) %>%
-  filter(rank == 1)
+
 
 ```
 
