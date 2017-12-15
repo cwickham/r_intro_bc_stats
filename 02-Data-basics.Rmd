@@ -76,7 +76,11 @@ mpg
 
 Take a look in the data/ directory in the project folder.
 
-Try reading in each file with the appropriate function.
+Try reading in each of:
+
+* `deaths.xls`
+* `nimbus.csv`
+* `iris.sav`
 
 ```{r}
 
