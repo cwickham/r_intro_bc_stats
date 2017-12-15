@@ -58,7 +58,7 @@ mean(heights, na.rm = TRUE)
 ## Syntax gone wrong
 
 ```{r, error=TRUE}
-sd(pull(.data = starwars, var = weight) 
+sd(pull(.data = starwars, var = mass)
 ```
 
 ```{r, error=TRUE}
