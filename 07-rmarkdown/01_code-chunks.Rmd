@@ -3,6 +3,8 @@ title: New Zealand
 output: html_document
 ---
 
+<!-- This file by Charlotte Wickham is licensed under a Creative Commons Attribution 4.0 International License. -->
+
 ```{r setup, include=FALSE}
 country_name <- "New Zealand"
 ```

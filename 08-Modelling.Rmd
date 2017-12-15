@@ -3,6 +3,8 @@ title: "Modelling & Broom"
 output: html_notebook
 ---
 
+<!-- This file by Charlotte Wickham is licensed under a Creative Commons Attribution 4.0 International License. -->
+
 ```{r setup}
 library(gapminder)
 library(tidyverse)

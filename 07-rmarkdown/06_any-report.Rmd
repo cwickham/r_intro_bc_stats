@@ -8,6 +8,8 @@ params:
   country: United States 
 ---
 
+<!-- This file by Charlotte Wickham is licensed under a Creative Commons Attribution 4.0 International License. -->
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 country_name <- params$country
