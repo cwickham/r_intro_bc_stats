@@ -49,7 +49,7 @@ nz_model <- three_models[[1]]
 Run the code, what kind of object is `tidy_models`?
 
 ```{r}
-tidy_models <- map(three_models, ~ tidy(.x))
+tidy_models <- map(three_models, ~ .x %>% tidy())
 tidy_models
 ```
 
@@ -58,7 +58,8 @@ tidy_models
 Edit the code to instead get the r.squared for each model.
 
 ```{r}
-map_dbl(three_models, ~ tidy(.x) %>% 
+map_dbl(three_models, ~ .x %>% 
+                       tidy() %>% 
                        filter(term == "year") %>% 
                        pull(estimate)
 )
@@ -89,7 +90,7 @@ gapminder_nested <- gapminder_nested %>%
 # Create the r-squared column, by mapping over model
 gapminder_nested <- gapminder_nested %>% 
   mutate(r.squared = map_dbl(model, 
-                        ~ glance(.x) %>% pull(r.squared)))
+                        ~ .x %>% glance() %>% pull(r.squared)))
 ```
 
 ## Your turn 6
@@ -98,7 +99,7 @@ gapminder_nested <- gapminder_nested %>%
 Filter `gapminder_nested` to find the countries with r.squared less than 0.5.  
 
 ```{r}
-gapminder_nested %>% filter(r.squared < 0.5)
+gapminder_nested
 ```
 
 Following along with slides:
