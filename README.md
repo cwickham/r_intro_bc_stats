@@ -233,6 +233,14 @@ You'll need to bring a laptop with R and RStudio installed. In addition, you'll 
   &quot;babynames&quot;, &quot;nycflights13&quot;, &quot;gapminder&quot;, &quot;Lahman&quot;))
 </code></pre>
 <p>
+If you've installed the tidyverse before, re-installing it may not update all the component pacakges, in which case run,
+</p>
+<pre><code>tidyverse::tidyverse_update()
+</code></pre>
+<p>
+to identify any out-of-date packages, and follow the instructions to update them.
+</p>
+<p>
 Don't forget to bring your power cable!
 </p>
 <p>

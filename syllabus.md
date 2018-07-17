@@ -168,6 +168,14 @@ you'll want to install the following packages:
     install.packages(c("tidyverse", "rmarkdown",
       "babynames", "nycflights13", "gapminder", "Lahman"))
 
+If you've installed the tidyverse before, re-installing it may not
+update all the component pacakges, in which case run,
+
+    tidyverse::tidyverse_update()
+
+to identify any out-of-date packages, and follow the instructions to
+update them.
+
 Don't forget to bring your power cable!
 
 I'll also be providing some additional materials (slides, code and data)
