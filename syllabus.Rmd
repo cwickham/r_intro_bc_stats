@@ -1,5 +1,5 @@
 ---
-title: R Training at BC Stats
+title: Introduction to R and RStudio at BC Stats
 author: "Instructor: Charlotte Wickham"
 output:
   md_document: default
