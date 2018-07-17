@@ -8,6 +8,12 @@ The repo currently reflects a 1.5 day version delivered July 2018. If you are lo
 
 **Solutions** to "Your Turns" available at [r\_intro\_bc\_stats\_solutions](https://github.com/cwickham/r_intro_bc_stats_solutions).
 
+To download these materials you can run:
+
+``` r
+usethis::use_course("github.com/cwickham/r_intro_bc_stats/archive/master.zip")
+```
+
 License
 -------
 
@@ -18,7 +24,7 @@ License
 Overview
 </h2>
 <p>
-This course will give you a feel for the complete data analysis process in R - from importing and manipulating data through visualization and modelling, and finally communicating results. You'll see how using code to capture the analysis pipeline leads to deliverables that are documented, easily reproduced and easily automated.
+This course will give you a feel for the complete data analysis process in R - from importing and manipulating data through visualization. You'll see how using code to capture the analysis pipeline leads to deliverables that are documented, easily reproduced and easily automated.
 </p>
 <p>
 We'll focus on tools in the <a href="https://www.tidyverse.org/"><code>tidyverse</code></a> a core set of R packages that are designed to be easy to learn, easy to use, and solve the most frequent data analysis problems.
@@ -57,7 +63,7 @@ Topic
 Day 1: afternoon
 </td>
 <td>
-Tue Dec 12th 1pm-4pm
+Tue Jul 24th 1pm-4:30pm
 </td>
 <td>
 Getting Started with R and RStudio
@@ -68,7 +74,7 @@ Getting Started with R and RStudio
 Day 2: morning
 </td>
 <td>
-Wed Dec 13th 9am-12pm
+Wed Jul 25th 8:30am-12pm
 </td>
 <td>
 Data Visualization with <code>ggplot2</code>
@@ -79,32 +85,10 @@ Data Visualization with <code>ggplot2</code>
 Day 2: afternoon
 </td>
 <td>
-Wed Dec 13th 1pm-4pm
+Wed Jul 25th 1pm-4:30pm
 </td>
 <td>
 Data Manipulation with <code>dplyr</code> and <code>tidyr</code>
-</td>
-</tr>
-<tr class="even">
-<td>
-Day 3: morning
-</td>
-<td>
-Thu Dec 14th 9am-12pm
-</td>
-<td>
-Reporting with Rmarkdown
-</td>
-</tr>
-<tr class="odd">
-<td>
-Day 3: afternoon
-</td>
-<td>
-Thu Dec 14th 1pm-4pm
-</td>
-<td>
-Workflow: list columns and iteration
 </td>
 </tr>
 </tbody>
@@ -170,32 +154,6 @@ Create grouped summaries of data
 Reshape data for use with tidy tools
 </li>
 </ul>
-<h3>
-Day 3 - Communication and Workflow
-</h3>
-<p>
-In the morning we'll complete the data analysis process by learning about RMarkdown - a framework for combining code, results and narrative to produce fully documented and reproducible deliverables. You'll also see how easy Rmarkdown makes it to regenerate reports based on different slices of data (something known as <em>Parameterized Reports</em>).
-</p>
-<p>
-In the afternoon we'll tackle a few more advanced ideas that are powerful ways to work with more complicated analyses. You'll learn that tibbles aren't just used for storing rectangular data, but are also a useful way to organise models and plots. The key tool to making use of this more complicated structure are the <code>map()</code> functions in the <code>purrr</code> package.
-</p>
-<p>
-By the end of the day you will be able to:
-</p>
-<ul>
-<li>
-Polish and save your plots to produce publication ready figures
-</li>
-<li>
-Write your own R Markdown documents that combine code, output and documentation
-</li>
-<li>
-Use list columns in tibbles to store more complicated data structures like plots or models
-</li>
-<li>
-Use the iteration functions in <code>purrr</code> to work with list columns while keeping your analysis organized.
-</li>
-</ul>
 <h2>
 Prerequisites
 </h2>
@@ -218,7 +176,7 @@ Although I'll assume on the first half-day you haven't used R, you might like to
 </p>
 <ul>
 <li>
-Work through the non-interactive <a href="https://www.safaribooksonline.com/library/view/hands-on-programming-with/9781449359089/ch01.html">Chapter 1 of Hands on Programming with R</a>, which introduces RStudio as well as basic R.
+Work through the non-interactive <a href="https://www.safaribooksonline.com/library/view/hands-on-programming-with/9781449359089/ch01.html">Chapter 1 of Hands on Programming with R</a>, which introduces RStudio as well as basic R syntax.
 </li>
 <li>
 Work through the interactive chapters at <a href="http://tryr.codeschool.com/">Try R</a>
@@ -233,11 +191,10 @@ Software Requirements
 <p>
 You'll need to bring a laptop with R and RStudio installed. In addition, you'll want to install the following packages:
 </p>
-<pre><code>install.packages(c(&quot;tidyverse&quot;, &quot;rmarkdown&quot;,
-  &quot;babynames&quot;, &quot;nycflights13&quot;, &quot;gapminder&quot;, &quot;Lahman&quot;))
+<pre><code>install.packages(c(&quot;tidyverse&quot;, &quot;rmarkdown&quot;, &quot;gapminder&quot;, &quot;usethis&quot;))
 </code></pre>
 <p>
-If you've installed the tidyverse before, re-installing it may not update all the component pacakges, in which case run,
+If you've installed the tidyverse before, re-installing it may not update all the component packages, in which case run,
 </p>
 <pre><code>tidyverse::tidyverse_update()
 </code></pre>
@@ -248,7 +205,7 @@ to identify any out-of-date packages, and follow the instructions to update them
 Don't forget to bring your power cable!
 </p>
 <p>
-I'll also be providing some additional materials (slides, code and data) prior to our meeting, keep your eyes out for an email about that next week.
+I'll also be providing some additional materials (slides, code and data) prior to our meeting, keep your eyes out for an email about soon.
 </p>
 <h2>
 Instructor Info

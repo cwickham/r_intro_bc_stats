@@ -2,10 +2,10 @@ Overview
 --------
 
 This course will give you a feel for the complete data analysis process
-in R - from importing and manipulating data through visualization and
-modelling, and finally communicating results. You'll see how using code
-to capture the analysis pipeline leads to deliverables that are
-documented, easily reproduced and easily automated.
+in R - from importing and manipulating data through visualization.
+You'll see how using code to capture the analysis pipeline leads to
+deliverables that are documented, easily reproduced and easily
+automated.
 
 We'll focus on tools in the [`tidyverse`](https://www.tidyverse.org/) a
 core set of R packages that are designed to be easy to learn, easy to
@@ -39,28 +39,18 @@ Schedule
 <tbody>
 <tr class="odd">
 <td>Day 1: afternoon</td>
-<td>Tue Dec 12th 1pm-4pm</td>
+<td>Tue Jul 24th 1pm-4:30pm</td>
 <td>Getting Started with R and RStudio</td>
 </tr>
 <tr class="even">
 <td>Day 2: morning</td>
-<td>Wed Dec 13th 9am-12pm</td>
+<td>Wed Jul 25th 8:30am-12pm</td>
 <td>Data Visualization with <code>ggplot2</code></td>
 </tr>
 <tr class="odd">
 <td>Day 2: afternoon</td>
-<td>Wed Dec 13th 1pm-4pm</td>
+<td>Wed Jul 25th 1pm-4:30pm</td>
 <td>Data Manipulation with <code>dplyr</code> and <code>tidyr</code></td>
-</tr>
-<tr class="even">
-<td>Day 3: morning</td>
-<td>Thu Dec 14th 9am-12pm</td>
-<td>Reporting with Rmarkdown</td>
-</tr>
-<tr class="odd">
-<td>Day 3: afternoon</td>
-<td>Thu Dec 14th 1pm-4pm</td>
-<td>Workflow: list columns and iteration</td>
 </tr>
 </tbody>
 </table>
@@ -112,31 +102,6 @@ By the end of the day you will be able to:
 -   Create grouped summaries of data
 -   Reshape data for use with tidy tools
 
-### Day 3 - Communication and Workflow
-
-In the morning we'll complete the data analysis process by learning
-about RMarkdown - a framework for combining code, results and narrative
-to produce fully documented and reproducible deliverables. You'll also
-see how easy Rmarkdown makes it to regenerate reports based on different
-slices of data (something known as *Parameterized Reports*).
-
-In the afternoon we'll tackle a few more advanced ideas that are
-powerful ways to work with more complicated analyses. You'll learn that
-tibbles aren't just used for storing rectangular data, but are also a
-useful way to organise models and plots. The key tool to making use of
-this more complicated structure are the `map()` functions in the `purrr`
-package.
-
-By the end of the day you will be able to:
-
--   Polish and save your plots to produce publication ready figures
--   Write your own R Markdown documents that combine code, output and
-    documentation
--   Use list columns in tibbles to store more complicated data
-    structures like plots or models
--   Use the iteration functions in `purrr` to work with list columns
-    while keeping your analysis organized.
-
 Prerequisites
 -------------
 
@@ -153,7 +118,7 @@ like to get a little experience before we meet. Some options are:
 -   Work through the non-interactive [Chapter 1 of Hands on Programming
     with
     R](https://www.safaribooksonline.com/library/view/hands-on-programming-with/9781449359089/ch01.html),
-    which introduces RStudio as well as basic R.
+    which introduces RStudio as well as basic R syntax.
 -   Work through the interactive chapters at [Try
     R](http://tryr.codeschool.com/)
 -   Try the free ["Introduction to R" course at
@@ -165,11 +130,10 @@ Software Requirements
 You'll need to bring a laptop with R and RStudio installed. In addition,
 you'll want to install the following packages:
 
-    install.packages(c("tidyverse", "rmarkdown",
-      "babynames", "nycflights13", "gapminder", "Lahman"))
+    install.packages(c("tidyverse", "rmarkdown", "gapminder", "usethis"))
 
 If you've installed the tidyverse before, re-installing it may not
-update all the component pacakges, in which case run,
+update all the component packages, in which case run,
 
     tidyverse::tidyverse_update()
 
@@ -179,8 +143,7 @@ update them.
 Don't forget to bring your power cable!
 
 I'll also be providing some additional materials (slides, code and data)
-prior to our meeting, keep your eyes out for an email about that next
-week.
+prior to our meeting, keep your eyes out for an email about soon.
 
 Instructor Info
 ---------------
