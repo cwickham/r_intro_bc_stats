@@ -1,6 +1,6 @@
 ---
 title: "Visualizing New House Price Index"
-output: html_notebook
+output: html_document
 ---
 
 <!-- This file by Charlotte Wickham is licensed under a Creative Commons Attribution 4.0 International License. -->
