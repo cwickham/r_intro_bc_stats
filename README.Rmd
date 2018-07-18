@@ -20,26 +20,12 @@ The repo currently reflects a 1.5 day version delivered July 2018.  If you are l
 
 **Solutions** to "Your Turns" available at [r_intro_bc_stats_solutions](https://github.com/cwickham/r_intro_bc_stats_solutions).
 
-## Getting these materials
-
-To download these materials, open RStudio and on the Console run:
-```{r, eval = FALSE}
-usethis::use_course("bit.ly/rintro-bc")
-```
-
-After a pause, you'll be asked a few questions about the download process. The materials will be downloaded, unzipped and a new RStudio session will open.  
-
-You only need to do this once.  If you close RStudio, and want to pick it up again later (i.e. on the day of the training):
-
-* Navigate to where the folder was downloaded (if you used the default settings this should be a folder called "r_intro_bc_stats-master" on your **Desktop**)
-* Double-click the file "r_intro_bc_stats.Rproj" to open up RStudio
-
 
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to data science with the tidyverse</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/cwickham/r_intro_bc_stats" property="cc:attributionName" rel="cc:attributionURL">Charlotte Wickham</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/rstudio/master-the-tidyverse" rel="dct:source">https://github.com/rstudio/master-the-tidyverse</a>.
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, results = "asis"}
 includeMarkdown("syllabus.md")
 ```
 

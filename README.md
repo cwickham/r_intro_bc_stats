@@ -8,22 +8,6 @@ The repo currently reflects a 1.5 day version delivered July 2018. If you are lo
 
 **Solutions** to "Your Turns" available at [r\_intro\_bc\_stats\_solutions](https://github.com/cwickham/r_intro_bc_stats_solutions).
 
-Getting these materials
------------------------
-
-To download these materials, open RStudio and on the Console run:
-
-``` r
-usethis::use_course("bit.ly/rintro-bc")
-```
-
-After a pause, you'll be asked a few questions about the download process. The materials will be downloaded, unzipped and a new RStudio session will open.
-
-You only need to do this once. If you close RStudio, and want to pick it up again later (i.e. on the day of the training):
-
--   Navigate to where the folder was downloaded (if you used the default settings this should be a folder called "r\_intro\_bc\_stats-master" on your **Desktop**)
--   Double-click the file "r\_intro\_bc\_stats.Rproj" to open up RStudio
-
 License
 -------
 
@@ -217,6 +201,28 @@ Don't forget to bring your power cable!
 <p>
 I'll also be providing some additional materials (slides, code and data) prior to our meeting, keep your eyes out for an email about soon.
 </p>
+<h2>
+Getting the materials
+</h2>
+<p>
+To download the materials, open RStudio and on the Console run:
+</p>
+<pre><code>usethis::use_course(&quot;bit.ly/rintro-bc&quot;)
+</code></pre>
+<p>
+After a pause, you'll be asked a few questions about the download process. The materials will be downloaded, unzipped and a new RStudio session will open.
+</p>
+<p>
+You only need to do this once. If you close RStudio, and want to pick it up again later (i.e. on the day of the training):
+</p>
+<ol>
+<li>
+Navigate to where the folder was downloaded (this should be a folder called <code>r\_intro\_bc\_stats-master</code> on your <strong>Desktop</strong>)
+</li>
+<li>
+Double-click the file <code>r\_intro\_bc\_stats.Rproj</code> to open up RStudio
+</li>
+</ol>
 <h2>
 Instructor Info
 </h2>
