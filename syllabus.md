@@ -153,8 +153,8 @@ To download the materials, open RStudio and on the Console run:
     usethis::use_course("bit.ly/rintro-bc")
 
 After a pause, you'll be asked a few questions about the download
-process. The materials will be downloaded, unzipped and a new RStudio
-session will open.
+process. The materials will be downloaded, unzipped to your Desktop, and
+a new RStudio session will open.
 
 You only need to do this once. If you close RStudio, and want to pick it
 up again later (i.e. on the day of the training):
