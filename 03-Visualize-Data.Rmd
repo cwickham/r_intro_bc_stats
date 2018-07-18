@@ -26,7 +26,7 @@ Run the code on the slide to make a graph. Pay strict attention to spelling, cap
 
 ## Your Turn 2
 
-Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.  
+Add `color`, `size`, `alpha`, or `shape` aesthetics to your graph. Experiment.  
 
 ```{r}
 ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy))
