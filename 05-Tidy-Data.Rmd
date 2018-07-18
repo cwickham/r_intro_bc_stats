@@ -1,6 +1,6 @@
 ---
 title: "Tidy Data"
-output: html_notebook
+output: html_document
 ---
 
 <!-- This file by RStudio is taken from https://github.com/rstudio/master-the-tidyverse and is licensed under a Creative Commons Attribution 4.0 International License. -->
