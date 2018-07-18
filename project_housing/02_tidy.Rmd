@@ -1,6 +1,6 @@
 ---
 title: "Tidying New House Price Index"
-output: html_notebook
+output: html_document
 ---
 
 ```{r setup}
