@@ -1,6 +1,6 @@
 ---
 title: "Transform Data"
-output: html_notebook
+output: html_document
 ---
 
 <!-- This file by Charlotte Wickham is licensed under a Creative Commons Attribution 4.0 International License, adapted from the orignal work at https://github.com/rstudio/master-the-tidyverse by RStudio. -->
@@ -123,7 +123,7 @@ gapminder
 ## Your Turn 7
 
 Brainstorm with your neighbor the sequence of operations to find:  the country with biggest jump in life expectancy  (between any two consecutive records) for each continent.
-
+  
 ## Your Turn 8
 
 Find the country with biggest jump in life expectancy (between any two consecutive records) for each continent.
