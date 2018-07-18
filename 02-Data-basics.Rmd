@@ -1,6 +1,6 @@
 ---
 title: "Data Basics"
-output: html_notebook
+output: html_document
 ---
 
 <!-- This file by Charlotte Wickham is licensed under a Creative Commons Attribution 4.0 International License. -->
@@ -30,7 +30,7 @@ Take a look at these two datasets, by typing their names into the console:
 
 ## Your turn 2
 
-Try running each line one by one, with Cmd/Ctrl + r:
+Try running each line one by one, with Ctrl + Enter (or Cmd + Enter on Mac):
 
 ```{r}
 dim(x = mpg)     
