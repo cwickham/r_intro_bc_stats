@@ -8,11 +8,21 @@ The repo currently reflects a 1.5 day version delivered July 2018. If you are lo
 
 **Solutions** to "Your Turns" available at [r\_intro\_bc\_stats\_solutions](https://github.com/cwickham/r_intro_bc_stats_solutions).
 
-To download these materials you can run:
+Getting these materials
+-----------------------
+
+To download these materials, open RStudio and on the Console run:
 
 ``` r
-usethis::use_course("github.com/cwickham/r_intro_bc_stats/archive/master.zip")
+usethis::use_course("bit.ly/rintro-bc")
 ```
+
+After a pause, you'll be asked a few questions about the download process. The materials will be downloaded, unzipped and a new RStudio session will open.
+
+You only need to do this once. If you close RStudio, and want to pick it up again later (i.e. on the day of the training):
+
+-   Navigate to where the folder was downloaded (if you used the default settings this should be a folder called "r\_intro\_bc\_stats-master" on your **Desktop**)
+-   Double-click the file "r\_intro\_bc\_stats.Rproj" to open up RStudio
 
 License
 -------
