@@ -163,6 +163,15 @@ up again later (i.e. on the day of the training):
     called `r_intro_bc_stats-master` on your **Desktop**)
 2.  Double-click the file `r_intro_bc_stats.Rproj` to open up RStudio
 
+rstudio.cloud
+-------------
+
+If you have a good internet connection, an alternative to installing the
+pacakges, and getting the materials, locally is to use
+<https://rstudio.cloud/project/49127>
+
+You may need to sign up for an account (free) first.
+
 Instructor Info
 ---------------
 
