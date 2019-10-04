@@ -14,9 +14,10 @@ library(htmltools)
 
 This is the repo for an introduction to R using the `tidyverse` developed for [BC Stats](https://www2.gov.bc.ca/gov/content/data/about-data-management/bc-stats).
 
-The repo currently reflects a 1.5 day version delivered July 2018.  If you are looking for an older version, try:
+The repo currently reflects a 1 day version to be delivered Oct 2019. If you are looking for an older version, try:
 
-* [Dec 2017: A 2.5 day version](https://github.com/cwickham/r_intro_bc_stats/tree/v1.0)
+-   [Jul 2018: A 1.5 day version](https://github.com/cwickham/r_intro_bc_stats/tree/v2.0)
+-   [Dec 2017: A 2.5 day version](https://github.com/cwickham/r_intro_bc_stats/tree/v1.0)
 
 **Solutions** to "Your Turns" available at [r_intro_bc_stats_solutions](https://github.com/cwickham/r_intro_bc_stats_solutions).
 
