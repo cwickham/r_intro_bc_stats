@@ -1,0 +1,84 @@
+---
+title: "Mobile Phone Trends"
+author: "Carl Howe, RStudio"
+date: "10/8/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(googlesheets)
+library(googledrive)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+```
+
+## Import Data 
+
+We can read in the Shortest Mobile Phone Survey data that we just collected using the `googlesheets` package. This will take a moment or two to run.
+
+```{r import, echo=FALSE, message=FALSE}
+
+gs_deauth()
+access_token <- gs_url("https://docs.google.com/spreadsheets/d/1aPEgsl_q332zYVIN2rsq5O6lZCLNsXW4mQlORhW3Hto/")
+access_token <- gs_key("1aPEgsl_q332zYVIN2rsq5O6lZCLNsXW4mQlORhW3Hto")
+responses <- gs_read(access_token)
+```
+
+We now thave the data in a data frame or tibble called `responses` and it has `r nrow(responses)` survey responses in it.
+
+## Tidying the Data
+
+Let's look at the first 5 rows of the data to get a sense of how it is formatted.
+
+```{r tidy, echo=FALSE, message=FALSE}
+head(responses, 5)
+```
+
+This data looks pretty tidy (we'll define what that means later), so we don't have to do anything in this step.
+
+## Data Transformation
+
+We'll summarize the results to prepare them for visualization. We'll just count the proportion of Apple responses in each column to get a sense for how Apple ownership has changed in the latest phone upgrade cycle and see how it might change in the future.
+
+```{r transform, echo=FALSE, message=FALSE}
+apple_summary <- responses %>% 
+  summarize(Past = sum(PreviousPhone == "Apple")/n(),
+            Present = sum(CurrentPhone == "Apple")/n(),
+            Future = sum(NextPhone == "Apple")/n()
+  ) %>% 
+  pivot_longer(Past:Future, values_to = "Percent", names_to = "When") %>% 
+  mutate(When = factor(When, levels=c("Past", "Present", "Future")))
+print(apple_summary)
+
+```
+
+## Visualizing The Survey Data
+
+We'll visualize the data using a chart that with points to show the proportions of Apple users in each ownership cycle.
+
+```{r visualize, echo=FALSE, message=FALSE}
+theme_set(theme_minimal())
+ggplot(apple_summary, 
+       aes(x = When,
+           y = Percent)) +
+     geom_point() +
+     scale_y_continuous(limits = c(0, 1), labels = scales::percent) +
+     labs(y = "Percent Apple Owners", x = "")
+```
+
+## Modeling The Results
+
+We can understand the overall trend by fitting a linear model to our 3 data points. This is quantitatively meaningless because our times are imprecise, but the linear model gives us a feel for what's going on with Apple device ownership and where it is headed in the future.
+
+```{r model, echo=FALSE, message=FALSE}
+ggplot(apple_summary, 
+       aes(x = When,
+           y = Percent)) +
+     geom_point() +
+     scale_y_continuous(limits = c(0, 1), labels = scales::percent) +
+     labs(y = "Percent Apple Owners", x = "") +
+     geom_smooth(aes(x = as.numeric(When)), method = lm, se = FALSE)
+```
+
