@@ -5,30 +5,34 @@ output: html_document
 
 <!-- This file by Charlotte Wickham is licensed under a Creative Commons Attribution 4.0 International License. -->
 
+# R Packages
+
 ```{r setup}
 library(tidyverse)
-library(haven)
+library(gapminder)
 library(readxl)
 ```
 
+## Your Turn 1
+
+What R packages are being loaded in the first chunk of 02-Data-Basics.Rmd?
+
 # Tabular Data
 
-You might not see much difference between these two in this notebook, but one is a tibble and one is a data frame:
+## Your Turn 2
+
+Take a look at the `mpg` dataset in two ways:
+
+1. Run the code in this chunk:
 ```{r}
 mpg
 ```
 
-```{r}
-quakes
-```
+2. Type mpg on the "Console" and hit Enter
 
-## Your turn 1
+What do you notice about the difference in the way the data is displayed?
 
-Take a look at these two datasets, by typing their names into the console:
-* quakes
-* mpg
-
-## Your turn 2
+## Your Turn 3
 
 Try running each line one by one, with Ctrl + Enter (or Cmd + Enter on Mac):
 
@@ -39,21 +43,21 @@ glimpse(x = mpg)
 View(x = mpg)  
 ```
 
-## Your turn 3
+## Your Turn 4
 
-How many rows of data are in quakes?
-
-```{r}
-
-```
-
-What are the names of the variables in quakes?
+How many rows of data are in `gapminder`?
 
 ```{r}
 
 ```
 
-## Your turn 4
+What are the names of the variables in `gapminder`?
+
+```{r}
+
+```
+
+## Your Turn 5
 
 Run the chunk to get help on `mpg`. What is this data?
 ```{r}
@@ -62,7 +66,7 @@ Run the chunk to get help on `mpg`. What is this data?
 
 # Vector Data
 
-## Your turn 5
+## Your Turn 6
 
 Take another look at mpg.  What kind of data is in each column?
 
@@ -72,28 +76,25 @@ mpg
 
 # Importing Data
 
-## Your Turn 6
-
-Take a look in the data/ directory in the project folder.
-
-Try reading in each of:
-
-* `deaths.xls`
-* `nimbus.csv`
-* `iris.sav`
-
 ```{r}
-
+nimbus <- read_csv("data/nimbus.csv")
 ```
-
 
 ## Your Turn 7
 
-Can you see what is wrong with the Excel file when it is imported?
+What code do you need to read in deaths.xls?
 
-Scan the Arguments section of ?read_excel, can you find an argument that might help? Try it!
+Use the Import Data tool to help generate the code.
 
 ```{r}
-?read_excel
+
+
 ```
+
+*Challenge:* Can you see a problem in the imported data? Can you Import again and fix it?
+
+```{r}
+
+```
+
 
