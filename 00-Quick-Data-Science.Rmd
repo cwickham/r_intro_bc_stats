@@ -26,7 +26,7 @@ access_token <- gs_key("1aPEgsl_q332zYVIN2rsq5O6lZCLNsXW4mQlORhW3Hto")
 responses <- gs_read(access_token)
 ```
 
-We now thave the data in a data frame or tibble called `responses` and it has `r nrow(responses)` survey responses in it.
+We now have the data in a data frame called `responses` and it has `r nrow(responses)` survey responses in it.
 
 ## Tidying the Data
 
